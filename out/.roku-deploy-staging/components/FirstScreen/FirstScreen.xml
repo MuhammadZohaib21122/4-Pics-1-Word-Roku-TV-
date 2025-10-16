@@ -1,0 +1,52 @@
+<component name="FirstScreen" extends="Group" initialFocus="letterGrid">
+    <script type="text/brightscript" uri="FirstScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Helper/roRegistry.brs" />
+
+    <children>
+
+        <MarkupGrid
+            id="posterGrid"
+            translation="[650, 100]"
+            itemComponentName="markupgriditem"
+            numColumns="2"
+            numRows="2"
+            itemSize="[350, 600]"
+            itemSpacing="[100, 100]"
+            vertFocusAnimationStyle="floatingfocus"
+            drawFocusFeedback="false" />
+
+        <Label
+            id="hintLabel"
+            translation="[650, 600]"
+            width="1280"
+            horizAlign="left"
+            color="0xDDB800"
+            text="Hint:">
+            <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
+        </Label>
+
+        <Label
+            id="answerLabel"
+            translation="[650, 660]"
+            width="1280"
+            horizAlign="left"
+            color="0x008604"
+            text=" answerLabel ">
+            <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
+        </Label>
+
+        <MarkupGrid
+            id="letterGrid"
+            translation="[500, 680]"
+            itemComponentName="LetterItem"
+            numColumns="6"
+            numRows="2"
+            itemSize="[400, 400]"
+            itemSpacing="[20, 20]"
+            vertFocusAnimationStyle="floatingfocus"
+            showFocusFootprint="false"
+            focusable="false" />
+
+    </children>
+</component>
+<!-- focusBitmapUri="pkg:/images/posters/thems_focus_Black.png" -->

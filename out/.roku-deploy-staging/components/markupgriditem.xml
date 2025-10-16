@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component name="MarkupGridItem" extends="Group">
+
+    <script type="text/brightscript" uri="markupgriditem.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Helper/roRegistry.brs" />
+    <interface>
+        <field id="itemContent" type="node" onChange="showcontent" />
+    </interface>
+
+
+    <children>
+
+        <!-- <Poster
+            id="itemPoster"
+            translation="[ 0, 0 ]"
+            width="300"
+            height="196">
+
+        </Poster> -->
+         <Group id="posterGroup" translation="[0, 0]">
+            <Poster id="poster1" width="200" height="200" translation="[0, 0]" />
+            <Poster id="poster2" width="200" height="200" translation="[200, 0]" />
+            <Poster id="poster3" width="200" height="200" translation="[0, 200]" />
+            <Poster id="poster4" width="200" height="200" translation="[200, 200]" />
+        </Group>
+
+    </children>
+
+</component>

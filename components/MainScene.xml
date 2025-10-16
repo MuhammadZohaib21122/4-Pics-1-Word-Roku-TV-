@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MainScene" extends="Scene">
+
+	<script type="text/brightscript" uri="MainScene.brs" />
+
+	<script type="text/brightscript" uri="UILogic/FirstScreenUILogic.brs" />
+	<script type="text/brightscript" uri="UILogic/ScreenStackLogic.brs" />
+	<script type="text/brightscript" uri="pkg:/components/Helper/roRegistry.brs" />
+
+
+	<customization suspendhandler="customSuspend" />
+	<customization resumehandler="customResume" />
+	<interface>
+
+		<field id="inputArgs" type="assocarray" />
+		<field id="launchArgs" type="assocarray" />
+		<field id="rowListData" type="node" />
+		<!-- <field id="allowScreenSaver" type="boolean" /> -->
+		<function name="CloseScreen" />
+		<function name="showFirstScreen" />
+
+		<field id="exitApp" type="boolean" alwaysNotify="true" />
+
+
+	</interface>
+
+	<children>
+
+	</children>
+</component>

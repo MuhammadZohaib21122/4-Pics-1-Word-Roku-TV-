@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "ContentReader" extends = "Task" >
+    <script type="text/brightscript" uri="contentreader.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Helper/roRegistry.brs" />
+
+  <interface>
+    <field id = "contenturi" type = "uri" />
+    <field id = "content" type = "node" />
+  </interface>
+
+
+</component>

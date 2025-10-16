@@ -1,0 +1,119 @@
+<component name="LetterItem" extends="Group">
+    <script type="text/brightscript" uri="LetterItem.brs" />
+
+    <interface>
+        <field id="itemContent" type="node" onChange="showcontent" />
+    </interface>
+
+
+    <children>
+
+        <!-- <Group id="lettersGroup" translation="[0, 0]">
+            <Label id="label1" translation="[0, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label2" translation="[60, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label3" translation="[120, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label4" translation="[180, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label5" translation="[240, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label6" translation="[300, 0]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+
+            <Label id="label7" translation="[0, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label8" translation="[60, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label9" translation="[120, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label10" translation="[180, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label11" translation="[240, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label12" translation="[300, 60]" width="150" height="150" color = "0xFFFFFF"
+        horizAlign="center" vertAlign = "center" >
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+        </Group> -->
+
+        <Group id="lettersGroup" translation="[0, 0]">
+            <!-- First row -->
+            <Label id="label1" translation="[0, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label2" translation="[170, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label3" translation="[340, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label4" translation="[510, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label5" translation="[680, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label6" translation="[850, 0]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+
+            <!-- Second row -->
+            <Label id="label7" translation="[0, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label8" translation="[170, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label9" translation="[340, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label10" translation="[510, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label11" translation="[680, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+            <Label id="label12" translation="[850, 170]" width="150" height="150" color="0xFFFFFF"
+                horizAlign="center" vertAlign = "center">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="130" />
+            </Label>
+        </Group>
+
+    </children>
+
+</component>

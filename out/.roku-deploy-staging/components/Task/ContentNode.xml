@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component name="ItemData" extends="ContentNode">
+
+    <interface>
+
+        <field id="id" type="int" />
+        <field id="images" type="array" />
+        <field id="letters" type="array" />
+        <field id="hint" type="string" />
+        <field id="answer" type="string" />
+
+
+    </interface>
+
+</component>
