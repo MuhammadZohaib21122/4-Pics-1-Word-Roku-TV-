@@ -27,9 +27,12 @@ sub getcontent()
                 if item.DoesExist("id") then itemNode.id = item.id
                 if item.DoesExist("images") then itemNode.images = item.images
                 if item.DoesExist("answer") then itemNode.answer = item.answer
-                if item.DoesExist("letters") then itemNode.letters = item.letters
+                ' if item.DoesExist("letters") then itemNode.letters = item.letters
                 if item.DoesExist("hint") then itemNode.hint = item.hint
 
+                if item.DoesExist("letters") then 
+                    
+                end if
                 ?"---------------------------"
                 ?"ID: "; item.id
                 ?"Images: "; item.images
