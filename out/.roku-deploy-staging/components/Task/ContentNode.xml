@@ -6,6 +6,7 @@
 
         <field id="id" type="int" />
         <field id="images" type="array" />
+        <!-- <field id="letters" type="roArray" /> -->
         <field id="letters" type="array" />
         <field id="hint" type="string" />
         <field id="answer" type="string" />
