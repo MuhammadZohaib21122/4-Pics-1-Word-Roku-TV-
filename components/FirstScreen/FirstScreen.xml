@@ -1,12 +1,40 @@
-<component name="FirstScreen" extends="Group" initialFocus="letterGrid">
+<component name="FirstScreen" extends="Group" initialFocus="btn1">
     <script type="text/brightscript" uri="FirstScreen.brs" />
     <script type="text/brightscript" uri="pkg:/components/Helper/roRegistry.brs" />
 
     <children>
 
+        <Poster width="381" height="115" uri="pkg:/images/posters/LCountPoster.png"
+            translation="[769, 50]">
+
+            <Label
+                id="LCountLabel"
+                translation="[0 , 46]"
+                width="400"
+                horizAlign="center"
+                color="0xFFFFFF"
+                text="Level 100">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="48" />
+            </Label>
+
+        </Poster>
+
+        <Poster id="poster1" width="150" height="150" uri=""
+            translation="[750, 200]" />
+
+        <Poster id="poster2" width="150" height="150" uri=""
+            translation="[1000, 200]" />
+
+        <Poster id="poster3" width="150" height="150" uri=""
+            translation="[750, 400]" />
+
+        <Poster id="poster4" width="150" height="150" uri=""
+            translation="[1000, 400]" />
+
         <MarkupGrid
+            visible="false"
             id="posterGrid"
-            translation="[650, 100]"
+            translation="[750, 200]"
             itemComponentName="markupgriditem"
             numColumns="2"
             numRows="2"
@@ -17,7 +45,7 @@
 
         <Label
             id="hintLabel"
-            translation="[650, 600]"
+            translation="[100, 150]"
             width="1280"
             horizAlign="left"
             color="0xDDB800"
@@ -26,8 +54,8 @@
         </Label>
 
         <Label
-            id="answerLabel"
-            translation="[650, 660]"
+            id="answerLabel" visible="true"
+            translation="[100, 100]"
             width="1280"
             horizAlign="left"
             color="0x008604"
@@ -35,7 +63,372 @@
             <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
         </Label>
 
-        <MarkupGrid
+        <Poster width="670" height="100" uri="pkg:/images/posters/inputPoster.png"
+            translation="[650, 580]">
+
+            <Label
+                id="inputLabel" visible="true"
+                translation="[200, 30]"
+                width="650"
+                horizAlign="left"
+                color="0xFFFFFF"
+                text="">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="50" />
+
+            </Label>
+
+            <Label
+                id="errorLabel" visible="false"
+                translation="[23, 35]"
+                width="400"
+                horizAlign="left"
+                color="0xFF0000"
+                text="Please enter your answer..........">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="24" />
+            </Label>
+        </Poster>
+
+        <!-- <Button id="btnDel" translation="[200, 200]" width="140" height="80" text="Delete" /> -->
+        <!-- <Button id="ok" translation="[1500, 800]" width="140" height="80" text="oookay" /> -->
+
+        <Button
+            id="ok"
+            focusable="true"
+            iconUri=""
+            focusFootprintBitmapUri="pkg:/images/posters/enterBtn_UF.png"
+            focusedIconUri=""
+            text="" visible="true" translation="[1480,710]"
+            showFocusFootprint="true"
+            maxWidth="109" height="335" minWidth="109"
+            focusBitmapUri="pkg:/images/posters/enterBtn_F.png" />
+        <Button
+            id="removeBtn"
+            focusable="true"
+            iconUri=""
+            focusFootprintBitmapUri="pkg:/images/posters/removeBtn_UF.png"
+            focusedIconUri=""
+            text="" visible="true" translation="[320,710]"
+            showFocusFootprint="true"
+            maxWidth="109" height="335" minWidth="109"
+            focusBitmapUri="pkg:/images/posters/removeBtn_F.png" />
+
+        <Group id="lettersGroup" translation="[450, 710]">
+            <Button id="btn1" translation="[0, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+
+                <Label
+                    id="label1"
+                    translation="[52 , 30]"
+                    width="100"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn2" translation="[170, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label2"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn3" translation="[340, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label3"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn4" translation="[510, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label4"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn5" translation="[680, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label5"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn6" translation="[850, 0]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label6"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn7" translation="[0, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label7"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn8" translation="[170, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label8"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn9" translation="[340, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label9"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn10" translation="[510, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label10"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn11" translation="[680, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label11"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+            <Button id="btn12" translation="[850, 170]" width="160" height="160" text=" "
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="160"
+                minHeight="160"
+                maxWidth="160"
+                maxHeight="160"
+                focusFootprintBitmapUri="pkg:/images/posters/letter_UF.png"
+                focusBitmapUri="pkg:/images/posters/letter_F.png">
+                <Label
+                    id="label12"
+                    translation="[52 , 30]"
+                    width="1280"
+                    horizAlign="left"
+                    color="0x008604"
+                    text=" ">
+                    <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="90" />
+                </Label>
+            </Button>
+        </Group>
+
+        <Group id="winGroup" visible="false" translation="[0, 0]">
+
+            <Poster width="1920" height="1080" uri="pkg:/images/posters/winPoster.png"
+                translation="[0, 0]" />
+
+
+            <Label
+                id="levelCountLabel"
+                translation="[670 , 535]"
+                width="580"
+                horizAlign="center"
+                color="0xFFFFFF"
+                text="">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="85" />
+            </Label>
+
+            <Button id="nextLevelBtn" translation="[823, 797]" width="269" height="86"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="269"
+                minHeight="86"
+                maxWidth="269"
+                maxHeight="86"
+                focusFootprintBitmapUri="pkg:/images/posters/btnNextLevel_UF.png"
+                focusBitmapUri="pkg:/images/posters/btnNextLevel_F.png">
+            </Button>
+
+        </Group>
+
+
+        <Group id="lossGroup" visible="false" translation="[0, 0]">
+
+            <Poster width="1920" height="1080" uri="pkg:/images/posters/lossPoster.png"
+                translation="[0, 0]" />
+
+
+            <Label
+                id="lossLevelCountLabel"
+                translation="[675 , 560]"
+                width="580"
+                horizAlign="center"
+                color="0xFFFFFF"
+                text="">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="85" />
+            </Label>
+
+            <Button id="skipLevelBtn" translation="[712, 850]" width="269" height="86"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="269"
+                minHeight="86"
+                maxWidth="269"
+                maxHeight="86"
+                focusFootprintBitmapUri="pkg:/images/posters/btnSkip_UF.png"
+                focusBitmapUri="pkg:/images/posters/btnSkip_F.png">
+            </Button>
+            <Button id="tryAgainBtn" translation="[1000, 850]" width="269" height="86"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="269"
+                minHeight="86"
+                maxWidth="269"
+                maxHeight="86"
+                focusFootprintBitmapUri="pkg:/images/posters/btnTryAgain_UF.png"
+                focusBitmapUri="pkg:/images/posters/btnTryAgain_F.png">
+            </Button>
+
+        </Group>
+
+        <!-- <MarkupGrid
             id="letterGrid"
             translation="[500, 680]"
             itemComponentName="LetterItem"
@@ -45,7 +438,8 @@
             itemSpacing="[20, 20]"
             vertFocusAnimationStyle="floatingfocus"
             showFocusFootprint="false"
-            focusable="false" />
+            drawFocusFeedback = "false"
+            focusable="false" /> -->
 
     </children>
 </component>
