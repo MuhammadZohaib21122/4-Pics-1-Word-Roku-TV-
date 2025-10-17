@@ -5,7 +5,7 @@ end sub
 sub getcontent()
     xfer = CreateObject("roURLTransfer")
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-    xfer.SetURL("https://devtest-storage.b-cdn.net/Roku/4%20Pic%201%20Word/1.json")
+    xfer.SetURL("https://devtest-storage.b-cdn.net/Roku/4%20Pic%201%20Word/110Level11.json")
     rsp = xfer.GetToString()
     json = ParseJson(rsp)
 
@@ -21,18 +21,18 @@ sub getcontent()
         for each item in json
             if item <> invalid and item.id = targetId then
                 ?"Found Match For ID:"; item.id
-
                 itemNode = parentContentNode.CreateChild("ItemData")
 
                 if item.DoesExist("id") then itemNode.id = item.id
                 if item.DoesExist("images") then itemNode.images = item.images
                 if item.DoesExist("answer") then itemNode.answer = item.answer
                 ' if item.DoesExist("letters") then itemNode.letters = item.letters
+                if item.DoesExist("letters") then
+                    itemNode.letters = ShuffleArray(item.letters)
+                end if
+
                 if item.DoesExist("hint") then itemNode.hint = item.hint
 
-                if item.DoesExist("letters") then 
-                    
-                end if
                 ?"---------------------------"
                 ?"ID: "; item.id
                 ?"Images: "; item.images
@@ -40,7 +40,7 @@ sub getcontent()
                 ?"Hint: "; item.hint
                 ?"Answer: "; item.answer
                 ?"---------------------------"
-                exit for 
+                exit for
             end if
         next
 
@@ -52,6 +52,6 @@ sub getcontent()
     end if
 
     m.top.content = parentContentNode
-    
+
 end sub
 
