@@ -1,5 +1,5 @@
 sub init()
-    m.posterGrid = m.top.findNode("posterGrid") 
+    m.posterGrid = m.top.findNode("posterGrid")
     m.hintLabel = m.top.findNode("hintLabel")
     m.answerLabel = m.top.findNode("answerLabel")
     m.inputLabel = m.top.findNode("inputLabel")
@@ -7,24 +7,47 @@ sub init()
     m.removeBtn = m.top.findNode("removeBtn")
     m.LCountLabel = m.top.findNode("LCountLabel")
     m.errorLabel = m.top.findNode("errorLabel")
+    m.coinLabel = m.top.findNode("coinLabel")
+    m.addCoinBtn = m.top.findNode("addCoinBtn")
+    m.addCoinBtn.observeField("buttonSelected", "addCoinBtnSelected")
+    m.revealAnswerBtn = m.top.findNode("revealAnswerBtn")
+    m.revealHintBtn = m.top.findNode("revealHintBtn")
+    m.revealSkipBtn = m.top.findNode("revealSkipBtn")
+    m.revealAnswerBtn.observeField("buttonSelected", "revealAnswerBtnSelected")
+    m.revealHintBtn.observeField("buttonSelected", "revealHintBtnSelected")
+    m.revealSkipBtn.observeField("buttonSelected", "skipBtnSelected")
+    m.hintORanswerReveal = m.top.findNode("hintORanswerReveal")
+    m.DoneGroupBtn = m.top.findNode("DoneGroupBtn")
+    m.DoneGroupBtn.observeField("buttonSelected", "DoneGroupBtnSelected")
+
+
+    m.SubscriptionGroup = m.top.findNode("SubscriptionGroup")
+    m.smallCoinPackBtn = m.top.findNode("smallCoinPackBtn")
+    m.largeCoinPackBtn = m.top.findNode("largeCoinPackBtn")
+    m.XlargeCoinPackBtn = m.top.findNode("XlargeCoinPackBtn")
+    m.exitSubscriptionBtn = m.top.findNode("exitSubscriptionBtn")
+
+    m.smallCoinPackBtn.observeField("buttonSelected", "smallCoinPackBtnSelected")
+    m.largeCoinPackBtn.observeField("buttonSelected", "largeCoinPackBtnSelected")
+    m.XlargeCoinPackBtn.observeField("buttonSelected", "XlargeCoinPackBtnSelected")
+    m.exitSubscriptionBtn.observeField("buttonSelected", "exitSubscriptionBtnSelected")
+
+
 
     m.winGroup = m.top.findNode("winGroup")
     m.levelCountLabel = m.top.findNode("levelCountLabel")
     m.nextLevelBtn = m.top.findNode("nextLevelBtn")
     m.nextLevelBtn.observeField("buttonSelected", "nextLevelBtnSelected")
-
     m.poster1 = m.top.findNode("poster1")
     m.poster2 = m.top.findNode("poster2")
     m.poster3 = m.top.findNode("poster3")
     m.poster4 = m.top.findNode("poster4")
-
     m.lossGroup = m.top.findNode("lossGroup")
     m.lossLevelCountLabel = m.top.findNode("lossLevelCountLabel")
     m.skipLevelBtn = m.top.findNode("skipLevelBtn")
-    m.skipLevelBtn.observeField("buttonSelected", "nextLevelBtnSelected")
+    m.skipLevelBtn.observeField("buttonSelected", "skipBtnSelected")
     m.tryAgainBtn = m.top.findNode("tryAgainBtn")
     m.tryAgainBtn.observeField("buttonSelected", "tryAgainBtnSelected")
-
     m.lettersGroup = m.top.findNode("lettersGroup")
     m.btn1 = m.lettersGroup.findNode("btn1")
     m.btn2 = m.lettersGroup.findNode("btn2")
@@ -38,7 +61,6 @@ sub init()
     m.btn10 = m.lettersGroup.findNode("btn10")
     m.btn11 = m.lettersGroup.findNode("btn11")
     m.btn12 = m.lettersGroup.findNode("btn12")
-
     m.label1 = m.lettersGroup.findNode("label1")
     m.label2 = m.lettersGroup.findNode("label2")
     m.label3 = m.lettersGroup.findNode("label3")
@@ -51,7 +73,6 @@ sub init()
     m.label10 = m.lettersGroup.findNode("label10")
     m.label11 = m.lettersGroup.findNode("label11")
     m.label12 = m.lettersGroup.findNode("label12")
-
     m.btn1.observeField("buttonSelected", "btn1")
     m.btn2.observeField("buttonSelected", "btn2")
     m.btn3.observeField("buttonSelected", "btn3")
@@ -74,6 +95,9 @@ sub init()
     m.readMarkupGridTask.observeField("content", "showmarkupgrid")
     m.readMarkupGridTask.control = "RUN"
     m.btn1.setFocus(true)
+
+    coinCount = loadCoinCount()
+    m.coinLabel.text = coinCount
 end sub
 
 
@@ -256,6 +280,15 @@ function OnKeyEvent(key as string, press as boolean) as boolean
             else if m.removeBtn.hasFocus()
                 m.btn1.setFocus(true)
 
+            else if m.btnOK.hasFocus()
+                m.revealAnswerBtn.setFocus(true)
+
+            else if m.smallCoinPackBtn.hasFocus()
+                m.largeCoinPackBtn.setFocus(true)
+
+            else if m.largeCoinPackBtn.hasFocus()
+                m.XlargeCoinPackBtn.setFocus(true)
+
 
             end if
             result = true
@@ -310,6 +343,15 @@ function OnKeyEvent(key as string, press as boolean) as boolean
                 m.skipLevelBtn.setFocus(true)
 
 
+            else if m.revealAnswerBtn.hasFocus() or m.revealHintBtn.hasFocus() or m.revealSkipBtn.hasFocus()
+                m.btnOK.setFocus(true)
+
+            else if m.XlargeCoinPackBtn.hasFocus()
+                m.largeCoinPackBtn.setFocus(true)
+
+            else if m.largeCoinPackBtn.hasFocus()
+                m.smallCoinPackBtn.setFocus(true)
+
             end if
 
             result = true
@@ -339,6 +381,23 @@ function OnKeyEvent(key as string, press as boolean) as boolean
             else if m.btn12.hasFocus()
                 m.btn6.setFocus(true)
 
+            else if m.btn1.hasFocus() or m.btn2.hasFocus() or m.btn3.hasFocus() or m.btn4.hasFocus() or m.btn5.hasFocus() or m.btn6.hasFocus()
+                m.addCoinBtn.setFocus(true)
+
+            else if m.revealSkipBtn.hasFocus()
+                m.revealHintBtn.setFocus(true)
+
+            else if m.revealHintBtn.hasFocus()
+                m.revealAnswerBtn.setFocus(true)
+
+            else if m.btnOK.hasFocus()
+                m.revealSkipBtn.setFocus(true)
+
+            else if m.removeBtn.hasFocus()
+                m.addCoinBtn.setFocus(true)
+
+            else if m.smallCoinPackBtn.hasFocus() or m.largeCoinPackBtn.hasFocus() or m.XlargeCoinPackBtn.hasFocus()
+                m.exitSubscriptionBtn.setFocus(true)
             end if
 
 
@@ -367,6 +426,21 @@ function OnKeyEvent(key as string, press as boolean) as boolean
             else if m.btn6.hasFocus()
                 m.btn12.setFocus(true)
 
+            else if m.addCoinBtn.hasFocus()
+                m.btn1.setFocus(true)
+
+            else if m.revealAnswerBtn.hasFocus()
+                m.revealHintBtn.setFocus(true)
+
+            else if m.revealHintBtn.hasFocus()
+                m.revealSkipBtn.setFocus(true)
+
+            else if m.revealSkipBtn.hasFocus()
+                m.btnOK.setFocus(true)
+
+            else if m.exitSubscriptionBtn.hasFocus()
+                m.smallCoinPackBtn.setFocus(true)
+
             end if
 
             result = true
@@ -381,9 +455,9 @@ function OnKeyEvent(key as string, press as boolean) as boolean
             else if m.winGroup.visible = true
                 nextLevelBtnSelected()
 
-            ' else if m.errorLabel.visible = true
-            '     m.errorLabel.visible = false
-            '     m.btn1.setFocus(true)
+                ' else if m.errorLabel.visible = true
+                '     m.errorLabel.visible = false
+                '     m.btn1.setFocus(true)
             end if
 
 
@@ -465,7 +539,9 @@ function btnOK()
         m.levelCountLabel.text = "Level : " + Str(levelCount)
         m.nextLevelBtn.setFocus(true)
 
-
+        coinCount = loadCoinCount()
+        m.coinLabel.text = coinCount + 200
+        saveCoinCount(coinCount + 200)
 
     else
 
@@ -488,7 +564,7 @@ end function
 function removeBtnSelected()
     currentText = m.inputLabel.text
     m.inputLabel.text = left(currentText, len(currentText) - 1)
-     m.errorLabel.visible = false
+    m.errorLabel.visible = false
 end function
 
 function nextLevelBtnSelected()
@@ -496,7 +572,7 @@ function nextLevelBtnSelected()
     m.btn1.setFocus(true)
     m.inputLabel.text = ""
     levelCount = loadLevelCount()
-    if levelCount >= 110
+    if levelCount >= 14
         saveLevelCount(1)
 
         m.readMarkupGridTask = createObject("roSGNode", "ContentReader")
@@ -512,8 +588,113 @@ function nextLevelBtnSelected()
     m.lossGroup.visible = false
 end function
 
+function skipBtnSelected()
+
+    coinCount = loadCoinCount()
+
+
+    if coinCount >= 300
+        m.coinLabel.text = coinCount - 300
+        saveCoinCount(coinCount - 300)
+
+        m.lossGroup.visible = false
+        m.btn1.setFocus(true)
+        m.inputLabel.text = ""
+        levelCount = loadLevelCount()
+        if levelCount >= 14
+            saveLevelCount(1)
+
+            m.readMarkupGridTask = createObject("roSGNode", "ContentReader")
+            m.readMarkupGridTask.observeField("content", "showmarkupgrid")
+            m.readMarkupGridTask.control = "RUN"
+        else
+            saveLevelCount(levelCount + 1)
+
+            m.readMarkupGridTask = createObject("roSGNode", "ContentReader")
+            m.readMarkupGridTask.observeField("content", "showmarkupgrid")
+            m.readMarkupGridTask.control = "RUN"
+        end if
+
+    else
+        tryAgainBtnSelected()
+    end if
+
+end function
+
 function tryAgainBtnSelected()
     m.inputLabel.text = ""
     m.lossGroup.visible = false
     m.btn1.setFocus(true)
+end function
+
+function addCoinBtnSelected()
+    m.SubscriptionGroup.visible = true
+    m.smallCoinPackBtn.setFocus(true)
+end function
+
+function revealAnswerBtnSelected()
+
+    coinCount = loadCoinCount()
+
+    if coinCount >= 300
+        m.coinLabel.text = coinCount - 300
+        saveCoinCount(coinCount - 300)
+        m.hintORanswerReveal.visible = true
+        m.answerLabel.visible = true
+        m.DoneGroupBtn.setFocus(true)
+    else
+        m.addCoinBtn.setFocus(true)
+    end if
+
+end function
+
+function revealHintBtnSelected()
+
+    coinCount = loadCoinCount()
+
+    if coinCount >= 100
+        m.coinLabel.text = coinCount - 100
+        saveCoinCount(coinCount - 100)
+        m.hintORanswerReveal.visible = true
+        m.hintLabel.visible = true
+        m.DoneGroupBtn.setFocus(true)
+    else
+        m.addCoinBtn.setFocus(true)
+    end if
+end function
+
+function DoneGroupBtnSelected()
+    m.answerLabel.visible = false
+    m.hintLabel.visible = false
+    m.hintORanswerReveal.visible = false
+    m.btn1.setFocus(true)
+end function
+
+function exitSubscriptionBtnSelected()
+    m.SubscriptionGroup.visible = false
+    m.btn1.setFocus(true)
+end function
+
+function smallCoinPackBtnSelected()
+    coinCount = loadCoinCount()
+    m.coinLabel.text = coinCount + 2000
+    m.SubscriptionGroup.visible = false
+    m.btn1.setFocus(true)
+    saveCoinCount(coinCount + 2000)
+end function
+
+function largeCoinPackBtnSelected()
+    coinCount = loadCoinCount()
+    m.coinLabel.text = coinCount + 5000
+    m.SubscriptionGroup.visible = false
+    m.btn1.setFocus(true)
+    saveCoinCount(coinCount + 5000)
+end function
+
+function XlargeCoinPackBtnSelected()
+    coinCount = loadCoinCount()
+    m.coinLabel.text = coinCount + 6500
+    m.SubscriptionGroup.visible = false
+    m.btn1.setFocus(true)
+    saveCoinCount(coinCount + 6500)
 end function
