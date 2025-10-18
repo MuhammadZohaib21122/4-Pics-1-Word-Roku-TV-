@@ -15,6 +15,23 @@ sub saveLevelCount(count)
     sec.Flush()
 end sub
 
+function loadCoinCount() as integer
+    sec = CreateObject("roRegistrySection", "CoinCount")
+    val = sec.Read("CoinCount")
+
+    if val = invalid or val = "" then
+        return 0
+    else
+        return StrToI(val)
+    end if
+end function
+sub saveCoinCount(count)
+    if count = invalid then count = 0
+    sec = CreateObject("roRegistrySection", "CoinCount")
+    sec.Write("CoinCount", str(count))
+    sec.Flush()
+end sub
+
 
 ' function ShuffleArray(arr as object) as object
 '     ' --- Create associative array dynamically (keys 0–11) ---
