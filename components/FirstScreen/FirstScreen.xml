@@ -4,6 +4,73 @@
 
     <children>
 
+        <Group id="sideBtnGroup" visible="true" translation="[0, 0]">
+
+            <Button id="revealAnswerBtn" translation="[1484, 249]" width="390" height="100"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="390"
+                minHeight="100"
+                maxWidth="390"
+                maxHeight="100"
+                focusFootprintBitmapUri="pkg:/images/posters/answerbtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/answerbtn_F.png">
+            </Button>
+            <Button id="revealHintBtn" translation="[1484, 403]" width="390" height="100"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="390"
+                minHeight="100"
+                maxWidth="390"
+                maxHeight="100"
+                focusFootprintBitmapUri="pkg:/images/posters/hintbtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/hintbtn_F.png">
+            </Button>
+            <Button id="revealSkipBtn" translation="[1484, 553]" width="390" height="100"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="390"
+                minHeight="100"
+                maxWidth="390"
+                maxHeight="100"
+                focusFootprintBitmapUri="pkg:/images/posters/SkipLevelbtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/SkipLevelbtn_F.png">
+            </Button>
+        </Group>
+
+        <Group id="coinGroup" visible="true" translation="[-30, -20]">
+
+            <Poster width="551" height="262" uri="pkg:/images/posters/coinGroupposter.png"
+                translation="[0, 0]" />
+
+
+            <Label
+                id="coinLabel"
+                translation="[215 , 102]"
+                width="195"
+                horizAlign="center"
+                color="0xFFFFFF"
+                text="10000">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="50" />
+            </Label>
+
+            <Button id="addCoinBtn" translation="[431, 80]" width="101" height="91"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="101"
+                minHeight="91"
+                maxWidth="101"
+                maxHeight="91"
+                focusFootprintBitmapUri="pkg:/images/posters/addCoinBtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/addCoinBtn_F.png">
+            </Button>
+        </Group>
+
+
         <Poster width="381" height="115" uri="pkg:/images/posters/LCountPoster.png"
             translation="[769, 50]">
 
@@ -13,7 +80,7 @@
                 width="400"
                 horizAlign="center"
                 color="0xFFFFFF"
-                text="Level 100">
+                text="Level 000">
                 <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="48" />
             </Label>
 
@@ -43,25 +110,6 @@
             vertFocusAnimationStyle="floatingfocus"
             drawFocusFeedback="false" />
 
-        <Label
-            id="hintLabel"
-            translation="[100, 150]"
-            width="1280"
-            horizAlign="left"
-            color="0xDDB800"
-            text="Hint:">
-            <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
-        </Label>
-
-        <Label
-            id="answerLabel" visible="true"
-            translation="[100, 100]"
-            width="1280"
-            horizAlign="left"
-            color="0x008604"
-            text=" answerLabel ">
-            <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
-        </Label>
 
         <Poster width="670" height="100" uri="pkg:/images/posters/inputPoster.png"
             translation="[650, 580]">
@@ -356,6 +404,45 @@
             </Button>
         </Group>
 
+
+        <Group id="hintORanswerReveal" visible="false" translation="[0, 0]">
+
+            <Poster width="1920" height="1080" uri="pkg:/images/posters/hintGroupPoster.png"
+                translation="[0, 0]" />
+
+
+            <Label
+                id="hintLabel" visible="false"
+                translation="[668, 678]"
+                width="580"
+                horizAlign="center"
+                color="0xDDB800"
+                text="">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
+            </Label>
+
+            <Label
+                id="answerLabel" visible="false"
+                translation="[668, 678]"
+                width="580"
+                horizAlign="center"
+                color="0x008604"
+                text="">
+                <Font role="font" uri="pkg:/components/Fonts/ChangaOne-Regular.ttf" size="30" />
+            </Label>
+
+            <Button id="DoneGroupBtn" translation="[839, 815]" width="259" height="86"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="259"
+                minHeight="86"
+                maxWidth="259"
+                maxHeight="86"
+                focusFootprintBitmapUri="pkg:/images/posters/DoneGroupBtn.png"
+                focusBitmapUri="pkg:/images/posters/DoneGroupBtn.png">
+            </Button>
+        </Group>
         <Group id="winGroup" visible="false" translation="[0, 0]">
 
             <Poster width="1920" height="1080" uri="pkg:/images/posters/winPoster.png"
@@ -424,6 +511,59 @@
                 maxHeight="86"
                 focusFootprintBitmapUri="pkg:/images/posters/btnTryAgain_UF.png"
                 focusBitmapUri="pkg:/images/posters/btnTryAgain_F.png">
+            </Button>
+
+        </Group>
+        <Group id="SubscriptionGroup" visible="false" translation="[0, 0]">
+
+            <Poster width="1920" height="1080" uri="pkg:/images/posters/darkBackground.png"
+                translation="[0, 0]" />
+
+
+            <Button id="smallCoinPackBtn" translation="[335, 282]" width="410" height="516"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="410"
+                minHeight="516"
+                maxWidth="410"
+                maxHeight="516"
+                focusFootprintBitmapUri="pkg:/images/posters/smallCoinPackBtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/smallCoinPackBtn_F.png">
+            </Button>
+            <Button id="largeCoinPackBtn" translation="[740, 282]" width="410" height="516"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="410"
+                minHeight="516"
+                maxWidth="410"
+                maxHeight="516"
+                focusFootprintBitmapUri="pkg:/images/posters/largeCoinPackBtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/largeCoinPackBtn_F.png">
+            </Button>
+            <Button id="XlargeCoinPackBtn" translation="[1175, 282]" width="410" height="516"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="410"
+                minHeight="516"
+                maxWidth="410"
+                maxHeight="516"
+                focusFootprintBitmapUri="pkg:/images/posters/x largeCoinPackBtn_UF.png"
+                focusBitmapUri="pkg:/images/posters/x largeCoinPackBtn_F.png">
+            </Button>
+
+            <Button id="exitSubscriptionBtn" translation="[1667, 144]" width="85" height="85"
+                showFocusFootprint="true" focusable="true"
+                iconUri=""
+                focusedIconUri=""
+                minWidth="85"
+                minHeight="85"
+                maxWidth="85"
+                maxHeight="85"
+                focusFootprintBitmapUri="pkg:/images/posters/exitSubscriptionGroup_UF.png"
+                focusBitmapUri="pkg:/images/posters/exitSubscriptionGroup_F.png">
             </Button>
 
         </Group>
