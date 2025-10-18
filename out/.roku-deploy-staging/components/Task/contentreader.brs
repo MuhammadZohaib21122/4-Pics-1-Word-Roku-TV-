@@ -5,7 +5,8 @@ end sub
 sub getcontent()
     xfer = CreateObject("roURLTransfer")
     xfer.SetCertificatesFile("common:/certs/ca-bundle.crt")
-    xfer.SetURL("https://devtest-storage.b-cdn.net/Roku/4%20Pic%201%20Word/110Level11.json")
+    xfer.SetURL("https://devtest-storage.b-cdn.net/Roku/4%20Pic%201%20Word/14Level.json")
+    ' xfer.SetURL("https://devtest-storage.b-cdn.net/Roku/4%20Pic%201%20Word/110Level11.json")
     rsp = xfer.GetToString()
     json = ParseJson(rsp)
 
